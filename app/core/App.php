@@ -9,9 +9,13 @@ class App {
     {
         $url = $this->parseURL();
 
-        if(isset($url[0]) && file_exists('../app/controllers/'.$url[0].'.php')){
-            $this->controller = $url[0];
-            unset($url[0]);
+        if(isset($url[0])){
+            // Ubah jadi format dengan huruf besar di awal, supaya cocok nama file controller di Linux
+            $controllerName = ucfirst(strtolower($url[0]));
+            if(file_exists('../app/controllers/'.$controllerName.'.php')){
+                $this->controller = $controllerName;
+                unset($url[0]);
+            }
         }
 
         require_once '../app/controllers/'.$this->controller.'.php';
