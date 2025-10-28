@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 22, 2025 at 08:10 PM
+-- Generation Time: Oct 28, 2025 at 01:50 AM
 -- Server version: 8.0.43-0ubuntu0.24.04.2
 -- PHP Version: 8.3.6
 
@@ -45,6 +45,27 @@ INSERT INTO `mahasiswa` (`id`, `nama`, `nim`, `email`, `jurusan`) VALUES
 (3, 'AHMAD FAJAR', '2411500034', 'ahmad@example.com', 'Teknik Komputer'),
 (4, 'RIFQI AL GHIFARI', '2411500099', 'rifqialghifari245@gmail.com', 'Informatika');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `matkul_2411500032`
+--
+
+CREATE TABLE `matkul_2411500032` (
+  `id` int NOT NULL,
+  `kode_mk` varchar(10) NOT NULL,
+  `nama_mk` varchar(100) NOT NULL,
+  `jns_mk` varchar(100) NOT NULL,
+  `sks` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `matkul_2411500032`
+--
+
+INSERT INTO `matkul_2411500032` (`id`, `kode_mk`, `nama_mk`, `jns_mk`, `sks`) VALUES
+(1, 'KF-001', 'Kalkulus', 'Teori', '3');
+
 --
 -- Indexes for dumped tables
 --
@@ -56,6 +77,12 @@ ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `matkul_2411500032`
+--
+ALTER TABLE `matkul_2411500032`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -64,6 +91,12 @@ ALTER TABLE `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `matkul_2411500032`
+--
+ALTER TABLE `matkul_2411500032`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
