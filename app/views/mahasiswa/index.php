@@ -6,13 +6,16 @@
   </div>
     <div class="row">
         <div class="col-6">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">Tambah Data Mahasiswa</button>
+            <button type="button" class="btn btn-primary tombolTambahData" data-toggle="modal" data-target="#formModal">Tambah Data Mahasiswa</button>
             <h3>Daftar Mahasiswa</h3>
             <ul class="list-group">
                 <?php foreach( $data['mhs'] as $mhs ) : ?>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li class="list-group-item">
                         <?= $mhs['nama']; ?>
-                        <a href="<?php echo BASEURL; ?>/mahasiswa/detail/<?php echo $mhs['id']; ?>" class="badge badge-primary">Detail</a>
+                        <a href="<?php echo BASEURL; ?>/mahasiswa/hapus/<?php echo $mhs['id']; ?>" class="badge badge-danger float-right ml-1" onclick="return confirm('Yakin?');">Hapus</a>
+
+                        <a href="<?php echo BASEURL; ?>/mahasiswa/ubah/<?php echo $mhs['id']; ?>" class="badge badge-success float-right ml-1 tampilModalUbah" data-toggle="modal" data-target="#formModal" data-id="<?php echo $mhs['id']; ?>">Ubah</a>
+                        <a href="<?php echo BASEURL; ?>/mahasiswa/detail/<?php echo $mhs['id']; ?>" class="badge badge-primary float-right ml-1">Detail</a>
                     </li>
                 <?php endforeach; ?>
             </ul>
