@@ -8,10 +8,10 @@ $(function(){
         $('#judulModal').html('Ubah Data Mahasiswa');
         $('.modal-footer button[type=submit]').html('Ubah Data');
 
-        const id = $(this).data($id);
+        const id = $(this).data('id');
 
         $.ajax({
-            url: 'http//localhost/PWBO-2411500032/public/mahasiswa/getUbah',
+            url: 'http://localhost/PWBO-2411500032/public/mahasiswa/getUbah',
             data: {id : id},
             method: 'post',
             dataType: 'json',
