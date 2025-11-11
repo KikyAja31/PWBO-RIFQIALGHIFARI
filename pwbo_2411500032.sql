@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 28, 2025 at 01:50 AM
+-- Generation Time: Nov 11, 2025 at 02:51 AM
 -- Server version: 8.0.43-0ubuntu0.24.04.2
 -- PHP Version: 8.3.6
 
@@ -40,10 +40,8 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id`, `nama`, `nim`, `email`, `jurusan`) VALUES
-(1, 'RIFQI CIHUY', '2411500032', 'rifqi@example.com', 'Teknik Informatika'),
-(2, 'NURUL HIDAYAH', '2411500033', 'nurul@example.com', 'Sistem Informasi'),
-(3, 'AHMAD FAJAR', '2411500034', 'ahmad@example.com', 'Teknik Komputer'),
-(4, 'RIFQI AL GHIFARI', '2411500099', 'rifqialghifari245@gmail.com', 'Informatika');
+(8, 'RIFQI AL GHIFARI', '2411500032', 'rifqi@example.com', 'Informatika'),
+(9, 'Julfandi', '2411500008', 'julfandi@example.com', 'Sistem Informasi');
 
 -- --------------------------------------------------------
 
@@ -64,7 +62,23 @@ CREATE TABLE `matkul_2411500032` (
 --
 
 INSERT INTO `matkul_2411500032` (`id`, `kode_mk`, `nama_mk`, `jns_mk`, `sks`) VALUES
-(1, 'KF-001', 'Kalkulus', 'Teori', '3');
+(1, 'KF-001', 'Kalkulus', 'Teori', '3'),
+(2, 'PF-002', 'Pemrograman Database', 'Praktikum', '4');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `peminjaman_2411500032`
+--
+
+CREATE TABLE `peminjaman_2411500032` (
+  `Kd_pinjam032` varchar(6) NOT NULL,
+  `NimMhs032` varchar(11) NOT NULL,
+  `TglPinjam032` date NOT NULL,
+  `JmlPinjam032` int NOT NULL,
+  `JudulBuku032` varchar(30) NOT NULL,
+  `TglKembali032` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Indexes for dumped tables
@@ -83,6 +97,12 @@ ALTER TABLE `matkul_2411500032`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `peminjaman_2411500032`
+--
+ALTER TABLE `peminjaman_2411500032`
+  ADD PRIMARY KEY (`Kd_pinjam032`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -90,13 +110,13 @@ ALTER TABLE `matkul_2411500032`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `matkul_2411500032`
 --
 ALTER TABLE `matkul_2411500032`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

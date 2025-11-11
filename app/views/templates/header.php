@@ -18,6 +18,7 @@
       <a class="nav-link" href="<?php echo BASEURL; ?>/mahasiswa">Mahasiswa</a>
       <a class="nav-link" href="<?php echo BASEURL; ?>/matakuliah">Matkul</a>
       <a class="nav-link" href="<?php echo BASEURL; ?>/about">About</a>
+      <a class="nav-link" href="<?php echo BASEURL; ?>/pinjam">Peminjaman Buku</a>
     </div>
   </div>
 </nav>
